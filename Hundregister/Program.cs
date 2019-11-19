@@ -232,6 +232,13 @@ namespace Hundregister
 
         #region Doggo management
 
+        /*
+         * Robin:
+         * Jag hade delat upp den här metoden för att göra den 
+         * lättare att läsa. Hela meny-systemet som används
+         * när man har hittat en hund borde kanske vara en
+         * egen metod.
+         */
         private void DoggoSearcher()
         {
             #region The search function
@@ -388,7 +395,28 @@ namespace Hundregister
             }
             #endregion
 
-
+            /*
+             * Robin:
+             * Nu kommer vi in på värdes- och referenstyper,
+             * men det är ganska viktigt för att förklara 
+             * mina åsikter kring hur du hanterar den hittade
+             * hunden. Klasser är referenstyper, vilket 
+             * betyder att en variabel (t.ex. doggo) inte
+             * innehåller själva objektet, utan en referens 
+             * till den. Det betyder att så länge du kan
+             * hitta den specifika hunden en gång, så 
+             * behöver du vara ändra värderna i den och 
+             * de förändringar du gör kommer att speglas 
+             * överallt. Du behöver alltså inte köra GetIndex
+             * varje gång, utan du behöver bara spara undan
+             * hunden en gång när den är hittat så kan du
+             * använda dig av den hela tiden. Nu så itererar
+             * du över hela listan av hundar när man skriver edit,
+             * 2 gånger, och sedan en gång till för varje 
+             * kommando man ger därefter. Du kan skippa alla
+             * dessa loopar i edit, och på sin höjd endast behöva 
+             * använda 1 loop i remove.
+             */
             while (doggoSearchRun)
             {
 
@@ -484,7 +512,10 @@ namespace Hundregister
         //Input managers, takes input as a string and converts to the desired variable type
         //Also provides an error message if you give it the wrong type of input
 
-
+            /*
+             * Robin:
+             * Snyggt med överlagrade Input metoder!
+             */
         //This boi outputs the input as a string
         private void InputManager(string message, out string input)
         {
@@ -592,3 +623,18 @@ namespace Hundregister
 
 
 }
+
+/*
+ * Robin:
+ * Bra jobbat! Du har några snygga lösningar som jag verkligen
+ * gillar! 
+ * 
+ * Du har skrivit koden med en tydlig och konsekvent kodnings-
+ * stil med bra beskrivande namngivning. Jag hade dock funderat
+ * lite över strukturen, framför allt i search metoden. 
+ * Search metoden kan även optimeras en hel del, se mina
+ * kommentarer längre upp.
+ * 
+ * Programmet verkar robust, och jag kan inte hitta några 
+ * uppenbara fel som krashar programmet.
+ */
