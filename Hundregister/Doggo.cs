@@ -125,8 +125,13 @@ namespace Hundregister
                 + "\nWithers: " + withers + " Cm"
                 + "\nWeight: " + weight + " Kgs"
                 + "\nTail length: " + TailLength() + " Cm");
-            name = name.ToUpper();
-
+            name = name.ToUpper(); 
+            /*
+             * Robin:
+             * Jag hade nog satt den sista raden här någon
+             * annanstans, typ i konstruktorn. Känns onödigt
+             * att göra det varje gång man kör print.
+             */
         }
 
         #endregion
@@ -138,6 +143,7 @@ namespace Hundregister
         {
             return name;
         }
+
 
         public string FormatName()
         {
@@ -154,7 +160,10 @@ namespace Hundregister
         #endregion
 
         #region Equality check
-
+        /*
+         * Robin:
+         * Snygg Equals.
+         */
         //Equality check
         public override bool Equals(object obj)
         {
